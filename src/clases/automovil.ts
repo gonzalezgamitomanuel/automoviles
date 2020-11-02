@@ -1,37 +1,37 @@
 export class Automovil {
 
     static push: any
-    static forEach(a: (Automovil: { Identificador: any }) => void) {
+    static forEach(a: (Automovil: { Id: any }) => void) {
 
         throw new Error('error')
 
     }
 
-    private identificador : any
-    private consumo : number
-    private gasolina: number 
+    private id : any
+    private gasto : number
+    private gasol: number 
     private encendido : boolean 
     private velocidad : number
 
-    constructor (identificador:any, consumo:number, gasolina:number){
+    constructor (id:any, gasto:number, gasol:number){
 
-        this.identificador = identificador
-        this.consumo = consumo
-        this.gasolina = gasolina
+        this.id = id
+        this.gasto = gasto
+        this.gasol = gasol
         this.encendido = false 
         this.velocidad = 0
 
     }
 
-    get Identificador(){
+    get Id(){
 
-        return this.identificador
+        return this.id
 
     }
 
-    get Consumo(){
+    get Gasto(){
 
-        return this.consumo
+        return this.gasto
 
     }
 
@@ -41,20 +41,20 @@ export class Automovil {
 
     }
 
-    get Gasolina(){
+    get Gasol(){
 
-        return this.gasolina
+        return this.gasol
 
     }
 
-    set Gasolina(c:number){
+    set Gasol(c:number){
 
-        if(this.gasolina <= 0){
+        if(this.gasol <= 0){
 
             throw 'El deposito no tiene gasolina'
 
         }
-        this.gasolina=c
+        this.gasol=c
 
     }
 
@@ -97,7 +97,7 @@ export class Automovil {
         }
     }
    
-    consumido(t:number){ 
+    gastado(t:number){ 
 
         if(!this.encendido || this.velocidad==0){
 
@@ -105,14 +105,14 @@ export class Automovil {
 
         } else {
 
-            return (this.velocidad/t)*(this.consumo/100)
+            return (this.velocidad/t)*(this.gasto/100)
 
         }
     }
    
     imprimir(){
 
-        return `El automovil con identificador ${this.identificador} va a ${this.velocidad} km/h y consume ${this.consumo} litros de gasolina cada 100 km`
+        return `El automovil con identificador ${this.id} va a ${this.velocidad} km/h y consume ${this.gasto} litros de gasolina cada 100 km`
 
     }
 
