@@ -10,16 +10,16 @@ export class Automovil {
     private id : any
     private gasto : number
     private gasol: number 
-    private encendido : boolean 
-    private velocidad : number
+    private encend : boolean 
+    private velocid : number
 
     constructor (id:any, gasto:number, gasol:number){
 
         this.id = id
         this.gasto = gasto
         this.gasol = gasol
-        this.encendido = false 
-        this.velocidad = 0
+        this.encend = false 
+        this.velocid = 0
 
     }
 
@@ -35,9 +35,9 @@ export class Automovil {
 
     }
 
-    get Encendido(){
+    get Encend(){
 
-        return this.encendido
+        return this.encend
 
     }
 
@@ -60,31 +60,31 @@ export class Automovil {
 
     cArrancado(){
 
-        if(this.Encendido==false){
+        if(this.Encend==false){
 
-            this.encendido=true
+            this.encend=true
 
         }else{
 
-            if (this.velocidad!=0){
+            if (this.velocid!=0){
 
                 throw 'La velocidad del automovil debe ser 0 para desactivarlo'
 
             } else {
 
-                this.encendido=false
+                this.encend=false
 
             }
         }
     }
 
-    get Velocidad(){
+    get Velocid(){
 
-        return this.velocidad
+        return this.velocid
 
     }
 
-    set Velocidad(num:number){
+    set Velocid(num:number){
 
         if(this.encendido==false){
 
@@ -92,27 +92,27 @@ export class Automovil {
 
         } else {
 
-            this.velocidad=num
+            this.velocid=num
 
         }
     }
    
     gastado(t:number){ 
 
-        if(!this.encendido || this.velocidad==0){
+        if(!this.encend || this.velocid==0){
 
             throw 'No puede calcular el consumo del automovil estando desactivado'
 
         } else {
 
-            return (this.velocidad/t)*(this.gasto/100)
+            return (this.velocid/t)*(this.gasto/100)
 
         }
     }
    
     imprimir(){
 
-        return `El automovil con identificador ${this.id} va a ${this.velocidad} km/h y consume ${this.gasto} litros de gasolina cada 100 km`
+        return `El automovil con identificador ${this.id} va a ${this.velocid} km/h y consume ${this.gasto} litros de gasolina cada 100 km`
 
     }
 
