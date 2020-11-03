@@ -18,19 +18,17 @@ const main = async() => {
 
             case 1:
                 console.log('Usted desea crear un nuevo automovil')
-                let identificador:number , consumo:number, gasolina:number
-    
+                let id:number , gasto:number
                 try {
 
-                    identificador = parseInt(await leerTeclado('Introduzca un identificador para el automovil'))
-                    consumo = parseFloat( await leerTeclado('Introduzca el consumo del automovil por cada 100km'))
-                    gasolina = parseFloat(await leerTeclado('Introduzca la cantidad de gasolina de un automovil'))
-                    let coche=new Automovil(identificador, consumo, gasolina)
+                    id = parseInt(await leerTeclado('Introduzca un id para el automovil'))
+                    gasto = parseFloat( await leerTeclado('Introduzca el consumo del automovil por cada 100km'))
+                    let coche=new Automovil(id, gasto)
                     let existe = false
 
                     coches.forEach(Coche => {
 
-                        if (coche.Identificador==Coche.Identificador){
+                        if (coche.Id==Coche.Id){
                             existe=true
                         }
 
@@ -95,7 +93,7 @@ const main = async() => {
                     
                     coches.forEach(Coche => {
 
-                        if (ide1==Coche.Identificador){
+                        if (ide1==Coche.Id){
 
                             index=coches.indexOf(Coche)
                             existe=true
@@ -133,7 +131,7 @@ const main = async() => {
                     let index:number=-1
                     coches.forEach(Coche => {
 
-                        if(Coche.Identificador==ide){
+                        if(Coche.Id==ide){
 
                            index=coches.indexOf(Coche)
 
@@ -200,7 +198,7 @@ const main = async() => {
                                     try {
 
                                         tiempo=parseInt(await leerTeclado("Para calcular el consumo, introduzca el tiempo que lleva el automovil a la velocidad actual"))
-                                        console.log(`El automovil ha gastado ${sCoche.consumido(tiempo)} litros de gasolina`)
+                                        console.log(`El automovil ha gastado ${sCoche.gastado(tiempo)} litros de gasolina`)
 
                                     } catch (error) {
 
