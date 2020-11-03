@@ -209,13 +209,6 @@ const main = async() => {
                                     }
                                     break
 
-                                case 5:
-
-                                    let cantidad: number
-                                    cantidad=parseFloat(await leerTeclado('Seleccione la cantidad de gasolina que desea introducir al automovil'))
-                                    sCoche.Gasolina=cantidad
-                                    break
-
                                 case 0:
 
                                     console.log('\nVolvemos al menu principal')
