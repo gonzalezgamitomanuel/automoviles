@@ -56,7 +56,7 @@ export class Automovil {
         
         if(this._arrancado==false){
             
-            throw 'Error, si el coche está parado no se puede cambiar la velocidad'
+            throw 'Si el automovil esta parado no cambia la velocidad'
             
         } else {
             
