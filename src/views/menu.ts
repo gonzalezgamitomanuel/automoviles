@@ -25,7 +25,6 @@ export const menu2 = async () => {
     console.log('2.- Arrancar o desactivar el automovil seleccionado')
     console.log('3.- Cambiar de velocidad el automovil seleccionado')
     console.log('4.- Calcular el consumo de gasolina del automovil seleccionado')
-    console.log('5.- Echar gasolina al automovil seleccionado')
     console.log('0.- Salir')
 
     n = parseInt( await leerTeclado('SELECCIONE UNO: ') )
